@@ -6,6 +6,10 @@
 			gapps.handleAuthClick();
 		};
 
+		this.send = function () {
+			gapps.callScriptFunction();
+		};
+
 		this.isAuthorized = gapps.isAuthorized;
 
 		this.message = gapps.message;

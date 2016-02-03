@@ -60,8 +60,16 @@
   				</button>
   			</div>
   		</div>
+  		<div class="row" ng-show="indexCtrl.message">
+  			<span>{{ indexCtrl.message }}</span>
+  		</div>
   		<div class="row">
-  			<span ng-hide="indexCtrl.isAuthorized">{{ indexCtrl.message }}</span>
+  			<div class="col-xs-12">
+	  			<button type="button" class="btn-lg btn-warning center-block"
+	  				ng-click="indexCtrl.send()">
+	  				Send request
+  				</button>
+  			</div>
   		</div>
 	</div>
 
