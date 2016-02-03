@@ -4,7 +4,7 @@
 	.service('gapps-service', function () {
 		// Your Client ID can be retrieved from your project in the Google
 		// Developer Console, https://console.developers.google.com
-		this.clientId  = '820420379643-bd9v9lpju2d3bg4u8d26hhdgt7ikvlj1.apps.googleusercontent.com';
+		this.clientId  = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
 
 		this.scopes = ['https://www.googleapis.com/auth/drive'];
 
