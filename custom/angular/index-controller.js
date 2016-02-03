@@ -7,5 +7,7 @@
 		};
 
 		this.isAuthorized = gapps.isAuthorized;
+
+		this.message = gapps.message;
 	}]);
 })();

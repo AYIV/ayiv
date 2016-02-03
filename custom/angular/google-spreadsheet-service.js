@@ -6,7 +6,7 @@
 		// Developer Console, https://console.developers.google.com
 		this.clientId  = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
 
-		this.scopes = ['https://www.googleapis.com/auth/drive'];
+		this.scopes = ['https://www.googleapis.com/auth/spreadsheets'];
 
 		/**
 		 * Check if current user has authorized this application.
@@ -47,8 +47,8 @@
 
 	        // Create an execution request object.
 	        var request = {
-	            'function': 'getFoldersUnderRoot'
-	            };
+	            'function': 'test'
+            };
 
 	        // Make the API request.
 	        var op = gapi.client.request({
