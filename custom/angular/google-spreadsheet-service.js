@@ -56,6 +56,7 @@
 	            'root': 'https://script.googleapis.com',
 	            'path': 'v1/scripts/' + scriptId + ':run',
 	            'method': 'POST',
+	            'headers': {"Content-Type": "application/json"},
 	            'body': request
 	        });
 
