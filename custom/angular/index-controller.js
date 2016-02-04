@@ -1,7 +1,9 @@
 (function() {
 	angular.module('myApp')
 
-	.controller('IndexController', ['gapps-service', function (gapps) {
+	.controller('IndexController', ['$scope', 'gapps-service', function ($scope, gapps) {
+		var controller = this;
+
 		this.authorizeToGapps = function () {
 			gapps.handleAuthClick();
 		};
@@ -10,8 +12,14 @@
 			gapps.callScriptFunction();
 		};
 
-		this.isAuthorized = gapps.isAuthorized;
+		$scope.$watch(
+			function () { return gapps.isAuthorized; },
+			function (n) { controller.isAuthorized = n; }
+		);
 
-		this.message = gapps.message;
+		$scope.$watch(
+			function () { return gapps.message; },
+			function (n) { controller.message = n; }
+		);
 	}]);
 })();
