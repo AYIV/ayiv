@@ -23,6 +23,6 @@
 function $$watch(scope, propertyToWatch, syncedProperty) {
 	scope.$watch(
 		function () { return propertyToWatch; },
-		function (n) { syncedProperty = newValue }
+		function (newValue) { syncedProperty = newValue }
 	);
 };
