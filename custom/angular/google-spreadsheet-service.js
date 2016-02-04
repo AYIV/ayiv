@@ -35,7 +35,7 @@
 		*/
 		service.handleAuthClick = function () {
 			gapi.auth.authorize(
-			  {client_id: service.clientId, scope: service.scopes, immediate: false},
+			  {client_id: service.clientId, scope: service.scopes, immediate: true},
 			  service.handleAuthResult);
 		}
 
