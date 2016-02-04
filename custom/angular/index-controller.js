@@ -12,17 +12,14 @@
 			gapps.callScriptFunction();
 		};
 
-		$$watch($scope, gapps.isAuthorized, controller.isAuthorized);
-		$$watch($scope, gapps.message, controller.message);
+		$scope.$watch(
+			function () { return gapps.isAuthorized; },
+			function (n) { controller.isAuthorized = n; }
+		);
+
+		$scope.$watch(
+			function () { return gapps.message; },
+			function (n) { controller.message = n; }
+		);
 	}]);
 })();
-
-/*
- * TODO:: refactor to smth like $scope._watch(propertyToWatch, syncedProperty)
- */
-function $$watch(scope, propertyToWatch, syncedProperty) {
-	scope.$watch(
-		function () { return propertyToWatch; },
-		function (n) { syncedProperty = newValue }
-	);
-};
