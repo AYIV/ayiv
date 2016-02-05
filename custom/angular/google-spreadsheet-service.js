@@ -64,22 +64,18 @@
 	}])
 
 	.service('gappsSpreadsheetService', ['gappsService', function (gapps) {
-		this.config = gapps.config;
+		this.gapps = gapps;
 
-		this.config.scopes = [
+		this.gapps.config.scopes = [
 			'https://www.googleapis.com/auth/spreadsheets'
 		];
-
-		this.gapps = gapps;
 	}])
 
 	.service('gappsSpreadsheetAsDatabaseService', ['gappsSpreadsheetService', function (spreadsheetService) {
 		var dbService = this;
 
-		dbService.config = spreadsheetService.config;
-
-		dbService.config.scriptId = 'MqJHBOjcG4ho8l_sg6XLiIp7zrY1BwJmy';
-		dbService.config.clientId = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
+		spreadsheetService.gapps.config.scriptId = 'MqJHBOjcG4ho8l_sg6XLiIp7zrY1BwJmy';
+		spreadsheetService.gapps.config.clientId = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
 
 		dbService.set = function () {
 			spreadsheetService.gapps.run({ function: 'test' }, null, function () {
