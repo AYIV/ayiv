@@ -76,9 +76,9 @@
 		spreadsheetService.gapps.config.scriptId = 'MqJHBOjcG4ho8l_sg6XLiIp7zrY1BwJmy';
 		spreadsheetService.gapps.config.clientId = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
 
-		spreadsheetService.gapps.authorize();
-
 		dbService.set = function () {
+			spreadsheetService.gapps.authorize();
+
 			spreadsheetService.gapps.run('test', {}, function () {
 				dbService.ok = true;
 			});
