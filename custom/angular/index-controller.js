@@ -1,25 +1,16 @@
 (function() {
 	angular.module('myApp')
 
-	.controller('IndexController', ['$scope', 'gapps-service', function ($scope, gapps) {
+	.controller('IndexController', ['$scope', 'gappsSpreadsheetAsDatabaseService', function ($scope, gapps) {
 		var controller = this;
 
-		this.authorizeToGapps = function () {
-			gapps.handleAuthClick();
-		};
-
 		this.send = function () {
-			gapps.callScriptFunction();
+			gapps.set();
 		};
 
 		$scope.$watch(
-			function () { return gapps.isAuthorized; },
-			function (n) { controller.isAuthorized = n; }
-		);
-
-		$scope.$watch(
-			function () { return gapps.message; },
-			function (n) { controller.message = n; }
+			function () { return gapps.ok; },
+			function (n) { controller.ok = n; }
 		);
 	}]);
 })();

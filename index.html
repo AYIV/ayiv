@@ -54,18 +54,7 @@
   		<div class="row">
   			<div class="col-xs-12">
 	  			<button type="button" class="btn-lg center-block"
-	  				ng-class="indexCtrl.isAuthorized ? 'btn-info' : 'btn-danger'"
-	  				ng-click="indexCtrl.authorizeToGapps()">
-	  				{{ indexCtrl.isAuthorized ? 'Logged in' : 'Login to Gapps' }}
-  				</button>
-  			</div>
-  		</div>
-  		<div class="row" ng-show="indexCtrl.message">
-  			<span>{{ indexCtrl.message }}</span>
-  		</div>
-  		<div class="row">
-  			<div class="col-xs-12">
-	  			<button type="button" class="btn-lg btn-warning center-block"
+	  				ng-class="indexCtrl.ok ? 'btn-info': 'btn-warning'"
 	  				ng-click="indexCtrl.send()">
 	  				Send request
   				</button>
