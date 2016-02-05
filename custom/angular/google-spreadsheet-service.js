@@ -22,9 +22,12 @@
 			});
 		}
 
-		service.run = function (functionObject, successCallback, apiErrorCallback, scriptErrorCallback) {
+		service.run = function (functionName, parameters, successCallback, apiErrorCallback, scriptErrorCallback) {
 			if (!service.isAuthorized)
 			{
+				service.authorize();
+
+				// TIP: it is not enough to call authorize method once. dunno why.
 				service.authorize();
 			}
 
@@ -35,10 +38,9 @@
 	            'root': 'https://script.googleapis.com',
 	            'path': 'v1/scripts/' + service.config.scriptId + ':run',
 	            'method': 'POST',
-	            'headers': {"Content-Type": "application/json"},
-	            'body': functionObject ? functionObject : {
-	            	'function': null,
-	            	'parameters': null
+	            'body': {
+	            	'function': functionName,
+	            	'parameters': parameters
             	}
 	        })
 
@@ -78,7 +80,7 @@
 		spreadsheetService.gapps.config.clientId = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
 
 		dbService.set = function () {
-			spreadsheetService.gapps.run({ function: 'test' }, function () {
+			spreadsheetService.gapps.run('test', {}, function () {
 				dbService.ok = true;
 			});
 		};
