@@ -22,7 +22,7 @@
 			});
 		}
 
-		service.run = function (functionObject, scriptId, successCallback, apiErrorCallback, scriptErrorCallback) {
+		service.run = function (functionObject, successCallback, apiErrorCallback, scriptErrorCallback) {
 			if (!service.isAuthorized)
 			{
 				service.authorize();
@@ -33,7 +33,7 @@
 
 	        .request({
 	            'root': 'https://script.googleapis.com',
-	            'path': 'v1/scripts/' + scriptId ? scriptId : service.config.scriptId + ':run',
+	            'path': 'v1/scripts/' + service.config.scriptId + ':run',
 	            'method': 'POST',
 	            'headers': {"Content-Type": "application/json"},
 	            'body': functionObject ? functionObject : {
@@ -78,7 +78,7 @@
 		spreadsheetService.gapps.config.clientId = '820420379643-cf9kbcq8ahl8gjcl4s797dndbecgn022.apps.googleusercontent.com';
 
 		dbService.set = function () {
-			spreadsheetService.gapps.run({ function: 'test' }, null, function () {
+			spreadsheetService.gapps.run({ function: 'test' }, function () {
 				dbService.ok = true;
 			});
 		};
