@@ -1,7 +1,7 @@
 (function() {
 	angular.module('myApp')
 
-	.controller('IndexController', ['$scope', 'gappsSpreadsheetAsDatabaseService', function ($scope, gapps) {
+	.controller('GappsExampleController', ['$scope', 'gappsSpreadsheetAsDatabaseService', function ($scope, gapps) {
 		var controller = this;
 
 		this.send = function () {
