@@ -4,13 +4,19 @@
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'pages/gapps_example.html',
+                templateUrl: 'pages/home.html'
+            })
+        
+            // examples
+            .when('/examples/gapps', {
+                templateUrl: 'pages/examples/gapps_example.html',
+                controller: 'GappsExampleController'
+            })
+            .when('/examples/animate/:someParam?', {
+                templateUrl: 'pages/examples/animate_example.html',
                 controller: 'AnimateController'
             })
-            .when('/:someParam', {
-                templateUrl: 'pages/animate_example.html',
-                controller: 'AnimateController'
-            })
+            
             .otherwise({
                 redirectTo: '/'
             });
