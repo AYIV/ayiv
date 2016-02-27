@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('myApp', ['ngRoute', 'webcam']);
+    var app = angular.module('myApp', ['ngRoute', 'webcam', 'jkuri.gallery']);
 
     app.config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -19,6 +19,10 @@
             .when('/examples/webcam', {
                 templateUrl: 'pages/examples/webcam.html',
                 controller: 'WebcamController'
+            })
+            .when('/examples/gallery', {
+                templateUrl: 'pages/examples/gallery.html',
+                controller: 'GalleryController'
             })
             
             .otherwise({
