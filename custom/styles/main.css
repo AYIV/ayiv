@@ -13,3 +13,8 @@
 .row {
     margin-top: 15px;
 }
+
+.webcam-container video {
+    max-width:  800px;
+    max-height: 600px;
+}
