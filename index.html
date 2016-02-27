@@ -23,9 +23,7 @@
     <![endif]-->
   </head>
   <body>
-  	<div class="container col-lg-3 col-md-6 col-xs-10 middle-screen">
-      <div ng-view></div>
-    </div>
+    <div ng-view></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -34,8 +32,14 @@
     <!-- AngularJs -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-    <!-- Custom -->
+    <!-- Custom/Angular -->
     <script src="app.js"></script>
-    <script src="custom/angular/animate-controller.js"></script>
+    
+    <!-- Custom/Angular/Controllers -->
+    <script src="custom/angular/examples/animate-controller.js"></script>
+    <script src="custom/angular/examples/gapps-controller.js"></script>
+    
+    <!-- Custom/Angular/Services -->
+    <script src="custom/angular/examples/google-spreadsheet-service.js"></script>
   </body>
 </html>

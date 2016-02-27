@@ -1,0 +1,23 @@
+<div class="container col-lg-3 col-md-6 col-xs-10 middle-screen" ng-controller="GappsExampleController as gappsCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="text-center text-realistic animated infinite rubberBand">{{ inputText }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <input class="form-control"
+                type="text" placeholder="Enter something..."
+                ng-model="inputText" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class="btn-lg center-block"
+                ng-class="gappsCtrl.ok ? 'btn-info': 'btn-warning'"
+                ng-click="gappsCtrl.send()">
+                Send request
+            </button>
+        </div>
+    </div>
+</div>

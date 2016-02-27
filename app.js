@@ -9,11 +9,11 @@
         
             // examples
             .when('/examples/gapps', {
-                templateUrl: 'pages/examples/gapps_example.html',
+                templateUrl: 'pages/examples/gapps.html',
                 controller: 'GappsExampleController'
             })
             .when('/examples/animate/:someParam?', {
-                templateUrl: 'pages/examples/animate_example.html',
+                templateUrl: 'pages/examples/animate.html',
                 controller: 'AnimateController'
             })
             
