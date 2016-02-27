@@ -1,0 +1,15 @@
+.middle-screen {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.text-realistic {
+    color:rgba(0,0,0,.6);
+    text-shadow:rgba(0,0,0,.2) 2px 6px 5px,rgba(255,255,255,.4) 0 -4px 30px;
+}
+
+.row {
+    margin-top: 15px;
+}
