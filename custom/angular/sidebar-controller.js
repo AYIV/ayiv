@@ -15,7 +15,7 @@
             },
             {
                 text: 'Test',
-                url: '/',
+                url: '#/',
                 hasChildren: false
             }
         ];
