@@ -17,7 +17,7 @@
 
     <!-- Custom -->
     <link href="custom/styles/main.css" rel="stylesheet">
-    
+
     <!-- Theme styles -->
     <link href="vendor/dashgum/css/style.css" rel="stylesheet">
     <link href="vendor/dashgum/css/style-responsive.css" rel="stylesheet">
@@ -36,9 +36,9 @@
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
-            
+
             <a href="/" class="logo"><b>AYIV</b></a>
-            
+
             <div class="nav notify-row" id="top_menu">
                 <ul class="nav top-menu"></ul>
             </div>
@@ -46,37 +46,31 @@
                 <ul class="nav pull-right top-menu"></ul>
             </div>
         </header>
-        
+
         <aside>
-            <div id="sidebar" class="nav-collapse ">
+            <div id="sidebar" class="nav-collapse " ng-controller="SidebarController as sidebarCtrl">
                 <ul class="sidebar-menu" id="nav-accordion">
-                    
-                    <li class="sub-menu">
-                        <a href="javascript:;">
-                            <i class="fa fa-desktop"></i>
-                            <span>UI Elements</span>
+
+                    <li ng-class="menuItem.hasChildren ? 'sub-menu' : ''" ng-repeat="menuItem in menuItems">
+                        <a href="{{ menuItem.hasChildren ? 'javascript:;' : menuItem.url }}">
+                            <i ng-class="[fa, menuItem.faIcon]"></i>
+                            <span>{{ menuItem.text }}</span>
                         </a>
-                        <ul class="sub">
-                            <li><a href="general.html">General</a></li>
-                            <li><a href="buttons.html">Buttons</a></li>
-                            <li><a href="panels.html">Panels</a></li>
+                        <ul class="sub" ng-if="menuItem.hasChildren">
+                            <li ng-repeat="child in menuItem.children">
+                                <a href="{{ child.url }}">{{ child.text }}</a>
+                            </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="/">
-                            <i class="fa fa-dashboard"></i>
-                            <span>Dashboard</span>
-                        </a>
                     </li>
 
                 </ul>
             </div>
         </aside>
-        
+
         <section id="main-content">
             <section class="wrapper site-min-height">
                 <h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-                
+
                 <div class="row mt">
                     <div class="col-lg-12">
                         <div ng-view></div>
@@ -84,17 +78,17 @@
                 </div>
             </section>
         </section>
-        
+
         <footer class="site-footer">
             <div class="text-center">
                 2016 - AYIV & Co.
-                <a href="#" class="go-top">
+                <a class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
             </div>
         </footer>
     </section>
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- AngularJs -->
@@ -115,7 +109,7 @@
 
     <!-- Custom/Angular/Controllers -->
     <script src="custom/angular/webcam-controller.js"></script>
-
+    <script src="custom/angular/sidebar-controller.js"></script>
     <!-- Custom/Angular/Controllers/Examples -->
     <script src="custom/angular/examples/animate-controller.js"></script>
     <script src="custom/angular/examples/gapps-controller.js"></script>

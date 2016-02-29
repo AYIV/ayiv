@@ -48,6 +48,8 @@ var Script = function () {
         $(window).on('resize', responsiveView);
     });
 
+    $('.go-top').scrollTo(0, 0);
+
     $('.fa-bars').click(function () {
         if ($('#sidebar > ul').is(":visible") === true) {
             $('#main-content').css({

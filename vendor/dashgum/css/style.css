@@ -245,10 +245,6 @@ ul.top-menu > li > .logout {
     position: relative;
 }
 
-#sidebar .sub-menu > .sub li  {
-    padding-left: 32px;
-}
-
 #sidebar .sub-menu > .sub li:last-child {
     padding-bottom: 10px;
 }
@@ -291,6 +287,7 @@ ul.sidebar-menu {
 
 #sidebar > ul > li.active > ul.sub, #sidebar > ul > li > ul.sub > li > a {
     display: block;
+    padding-left: 32px;
 }
 
 ul.sidebar-menu li ul.sub li{
@@ -300,15 +297,9 @@ ul.sidebar-menu li ul.sub li{
     margin-right: 0;
 }
 
-ul.sidebar-menu li ul.sub li:last-child{
-    border-radius: 0 0 4px 4px;
-    -webkit-border-radius: 0 0 4px 4px;
-}
-
 ul.sidebar-menu li ul.sub li a {
     font-size: 12px;
-    padding: 6px 0;
-    line-height: 35px;
+    padding: 12px 0;
     height: 35px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -356,7 +347,6 @@ ul.sidebar-menu li a{
 }
 
 ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #68dff0;
     color: #fff;
     display: block;
 
@@ -367,6 +357,14 @@ ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:fo
     transition: all 0.3s ease;
 }
 
+ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+    background: #68dff0;
+}
+
+ul.sidebar-menu li .sub a.active, ul.sidebar-menu li .sub a:hover, ul.sidebar-menu li .sub a:focus {
+    background: #424a5d;
+    color: #68dff0;
+}
 
 ul.sidebar-menu li a i {
     font-size: 15px;
