@@ -14,8 +14,8 @@
                 ]
             },
             {
-                text: 'Test',
-                url: '#/',
+                text: 'Camera',
+                url: '#/camera',
                 hasChildren: false
             }
         ];

@@ -1,0 +1,22 @@
+#shotBtn {
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 50px;
+    margin-top: -46px;
+    position: relative;
+}
+
+#shotBtn:hover {
+    background: radial-gradient(circle farthest-corner, #000, #999);
+    opacity: 0.5;
+}
+
+#shotBtn i {
+    font-size: 25px;
+    color: #FFF;
+}
+
+.webcam-container {
+    display: inline-block;
+}

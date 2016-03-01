@@ -1,0 +1,11 @@
+<div class="webcam-container" ng-controller="CameraController">
+    <webcam channel="webcamChannel" ng-hide="isShotReady"></webcam>
+    <canvas id="snapshot" ng-show="isShotReady"></canvas>
+    
+    <div id="shotBtn" ng-click="shot()" ng-hide="isShotReady">
+        <i class="fa fa-camera"></i>
+    </div>
+    <div ng-click="removeCurrentShot()" ng-show="isShotReady">
+        <i class="fa fa-remove"></i>
+    </div>
+</div>

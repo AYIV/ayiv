@@ -6,7 +6,10 @@
             .when('/', {
                 templateUrl: 'pages/home.html'
             })
-        
+            .when('/camera', {
+                templateUrl: 'pages/camera.html'
+            })
+            
             // examples
             .when('/examples/gapps', {
                 templateUrl: 'pages/examples/gapps.html',
