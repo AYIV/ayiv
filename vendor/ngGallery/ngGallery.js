@@ -61,7 +61,7 @@
 				thumbsNum: '@'
 			},
 			templateUrl: function (element, attrs) {
-				return attrs.templateUrl || defaults.templateUrl;
+				return attrs.templateurl || defaults.templateUrl;
 			},
 			link: function (scope, element, attrs) {
 				setScopeValues(scope, attrs);
@@ -108,6 +108,8 @@
 						smartScroll(scope.index);
 					});
 					scope.description = scope.images[i].description || '';
+                    
+                    scope.$emit('ngGallery:imageShow', scope);
 				};
 
 				scope.showImageDownloadButton = function () {
@@ -206,6 +208,7 @@
 					}, 100);
 				};
 
+                scope.$emit('ngGallery:postLink', scope);
 			}
 		};
 	}

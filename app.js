@@ -27,6 +27,10 @@
                 templateUrl: 'pages/examples/gallery.html',
                 controller: 'GalleryController'
             })
+            .when('/examples/gallery-wrap', {
+                templateUrl: 'pages/examples/gallery-wrap.html',
+                controller: 'GalleryController'
+            })
             
             .otherwise({
                 redirectTo: '/'

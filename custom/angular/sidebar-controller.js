@@ -10,6 +10,7 @@
                     { url: '#/examples/animate', text: 'Animate' },
                     { url: '#/examples/gapps', text: 'Gapps' },
                     { url: '#/examples/gallery', text: 'Gallery' },
+                    { url: '#/examples/gallery-wrap', text: 'Gallery Wrap' },
                     { url: '#/examples/webcam', text: 'Webcam' }
                 ]
             },
