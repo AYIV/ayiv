@@ -8,23 +8,6 @@
             { thumb: 'http://www.bugaga.ru/uploads/posts/2016-01/1453486498_foto-19.jpg', img: 'http://www.bugaga.ru/uploads/posts/2016-01/1453486498_foto-19.jpg', description: 'Fat cat' },
             { thumb: 'http://www.zooclub.ru/skat/img.php?w=700&h=700&img=./attach/6287.jpg', img: 'http://www.zooclub.ru/skat/img.php?w=700&h=700&img=./attach/6287.jpg', description: 'Kitty' },
             { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' },
-            { thumb: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', img: 'http://cs7007.vk.me/v7007935/2b01b/4lgfiUdhTm4.jpg', description: 'Image 1' }
         ];
-        
-        $scope.saveToGallery = () => {
-            var dataUrl = document.getElementById('snapshot').toDataURL("image/png").replace("image/png", "image/octet-stream");
-            
-            $scope.images.push({
-                thumb: dataUrl,
-                img:   dataUrl,
-                description: 'Test' 
-            });
-        };
     }]);
 })();
