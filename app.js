@@ -10,6 +10,11 @@
                 templateUrl: 'pages/camera.html'
             })
             
+            // orders
+            .when('/order/new', {
+                templateUrl: 'pages/order/new.html'
+            })
+            
             // examples
             .when('/examples/gapps', {
                 templateUrl: 'pages/examples/gapps.html',

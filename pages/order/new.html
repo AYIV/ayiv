@@ -1,0 +1,22 @@
+<div ng-controller="GalleryController">
+    <!-- Webcam -->
+    <div class="webcam-container" ng-controller="CameraController">
+        <webcam channel="webcamChannel" ng-hide="isShotReady"></webcam>
+        <canvas id="snapshot" ng-show="isShotReady"></canvas>
+
+        <div id="shotBtn" ng-click="shot()" ng-hide="isShotReady">
+            <i class="fa fa-camera"></i>
+        </div>
+        <div ng-click="removeCurrentShot()" ng-show="isShotReady">
+            <i class="fa fa-remove"></i>
+        </div>
+        <div ng-click="saveToGallery()" ng-show="isShotReady">
+            <i class="fa fa-floppy-o"></i>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+    <default-picture-gallery images="images">
+        <ng-gallery images="images" thumbs-num="10"></ng-gallery>
+    </default-picture-gallery>
+</div>
