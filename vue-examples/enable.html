@@ -7,9 +7,9 @@
             mappings: [ { value: 'a' }, { value: 'b' } ]
         };
         window.onload = () => {
-            Vue.component('my-component', {
-                template: await (await fetch('vue-template.html')).text()
-            })
+			var template = await (await fetch('vue-template.html')).text();
+			
+            Vue.component('my-component', { template: template });
 
             window.app = new Vue({
                 el: '#app',
