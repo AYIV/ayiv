@@ -8,7 +8,7 @@
         };
         window.onload = () => {
             Vue.component('my-component', {
-                template: '<div>Пользовательский компонент!</div>'
+                template: await (await fetch('vue-template.html')).text()
             })
 
             window.app = new Vue({
