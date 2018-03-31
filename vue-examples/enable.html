@@ -9,7 +9,7 @@
 
 				delete definition.templateUrl;
 			}
-			return renderer(id, definition);
+			return renderer.bind(Vue, id, definition);
 		})(Vue.component);
 	
         var project = {
