@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        var project = {
+            mappings: [ { value: 'a' }, { value: 'b' } ]
+        };
+        window.onload = () => {
+            Vue.component('my-component', {
+                template: '<div>Пользовательский компонент!</div>'
+            })
+
+            window.app = new Vue({
+                el: '#app',
+                data: {
+                    model: project,
+                    $dirty: false
+                },
+                computed: {
+                    disable: function () { return !this.$data.$dirty; }
+                },
+                watch: {
+                    '$data': {
+                        handler: function (val,oldVal) { this.$data.$dirty = true; },
+                        deep: true
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="mapping in model.mappings">
+            <input type="text" v-model=mapping.value />
+        </div>
+        <input type="submit" value="Save" :disabled=disable />
+
+        <my-component></my-component>
+    </div>
+</body>
+</html>
