@@ -3,11 +3,20 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript">
+		Vue.component = (renderer => (id, definition) => {
+			if (!definition['template-url']) {
+				definition.template = (async () => await (await fetch(definition['template-url'])).text())();
+
+				delete definition['template-url'];
+			}
+			return renderer(id, definition);
+		})(Vue.component);
+	
         var project = {
             mappings: [ { value: 'a' }, { value: 'b' } ]
         };
         window.onload = async () => {
-            Vue.component('my-component', { template: await (await fetch('vue-template.html')).text() });
+            Vue.component('my-component', { template-url: 'vue-template.html' });
 
             window.app = new Vue({
                 el: '#app',
