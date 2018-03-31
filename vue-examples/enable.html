@@ -6,7 +6,7 @@
         var project = {
             mappings: [ { value: 'a' }, { value: 'b' } ]
         };
-        window.onload = function () {
+        window.onload = async () => {
             Vue.component('my-component', { template: await (await fetch('vue-template.html')).text() });
 
             window.app = new Vue({
