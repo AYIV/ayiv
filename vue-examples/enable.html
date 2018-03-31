@@ -3,9 +3,9 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript">
-		Vue.component = (renderer => (id, definition) => {
+		Vue.component = (renderer => async (id, definition) => {
 			if (definition.templateUrl) {
-				definition.template = (async () => await (await fetch(definition.templateUrl)).text())();
+				definition.template = await (await fetch(definition.templateUrl)).text();
 
 				delete definition.templateUrl;
 			}
