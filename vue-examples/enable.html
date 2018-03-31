@@ -4,10 +4,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript">
 		Vue.component = (renderer => (id, definition) => {
-			if (!definition['template-url']) {
-				definition.template = (async () => await (await fetch(definition['template-url'])).text())();
+			if (!definition.templateUrl) {
+				definition.template = (async () => await (await fetch(definition.templateUrl)).text())();
 
-				delete definition['template-url'];
+				delete definition.templateUrl;
 			}
 			return renderer(id, definition);
 		})(Vue.component);
@@ -16,7 +16,7 @@
             mappings: [ { value: 'a' }, { value: 'b' } ]
         };
         window.onload = async () => {
-            Vue.component('my-component', { template-url: 'vue-template.html' });
+            Vue.component('my-component', { templateUrl: 'vue-template.html' });
 
             window.app = new Vue({
                 el: '#app',
